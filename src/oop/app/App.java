@@ -1,39 +1,26 @@
 package oop.app;
 
+import java.util.ArrayList;
+
 import oop.users.User;
 
 public class App {
 
 	public static void main(String[] args) {
-		User user1 = new User();
-		user1.id = 1;
-		user1.username = "JHarry";
-		user1.email = "j@h.com";
+		User user1 = new User(1, "JHarry", "j@h.com"); // User line 15
 
-		System.out.print("ID: ");
-		System.out.println(user1.id);
-		System.out.print("Username: ");
-		System.out.println(user1.username);
-		System.out.print("Email: ");
-		System.out.println(user1.email);
+		System.out.println("USER1: " + user1);
 
-		User user2 = new User();
-		user2.id = 2;
-		user2.username = "JBizzle";
-		user2.email = "j@b.com";
+		ArrayList<User> users = new ArrayList<>();
 
-		System.out.print("ID: ");
-		System.out.println(user2.id);
-		System.out.print("Username: ");
-		System.out.println(user2.username);
-		System.out.print("Email: ");
-		System.out.println(user2.email);
+		users.add(user1);
+		users.add(new User(2, "JBizzle", "j@b.com"));
+		users.add(new User(3, "Bloop", "bl@oop.com"));
 
-		System.out.print("ID: ");
-		System.out.println(user1.id);
-		System.out.print("Username: ");
-		System.out.println(user1.username);
-		System.out.print("Email: ");
-		System.out.println(user1.email);
+		for (int i = 0; i < users.size(); i++) {
+			User currentUser = users.get(i); // get users at index i from users list
+			currentUser.print(); // User line 22-29
+		}
+
 	}
 }
