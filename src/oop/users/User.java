@@ -8,10 +8,12 @@ public class User {
 
 	public String email;
 
+	// INSERT INTO `user` () VALUES ();
 	public User() {
 		System.out.println("W00t");
 	}
 
+	// INSERT INTO `user` (id, username, email) VALUES (...);
 	public User(int id, String username, String email) {
 		this.id = id; // set MY id equal to the incoming id
 		this.username = username;

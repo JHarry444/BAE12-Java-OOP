@@ -1,8 +1,10 @@
 package oop.app;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import oop.users.User;
+import oop.users.UserManager;
 
 public class App {
 
@@ -22,5 +24,18 @@ public class App {
 			currentUser.print(); // User line 22-29
 		}
 
+		ArrayList<Integer> nums = new ArrayList<>(List.of(3, 6, 9));
+
+		nums.add(27);
+
+		System.out.println(nums);
+
+		UserManager manager = new UserManager();
+
+		User user2 = new User(21, "bloop", "b@loop.com");
+		System.out.println("MANAGER:");
+		manager.addUser(user2);
+
+		manager.print();
 	}
 }

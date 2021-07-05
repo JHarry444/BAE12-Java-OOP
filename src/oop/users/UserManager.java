@@ -1,0 +1,40 @@
+package oop.users;
+
+import java.util.ArrayList;
+
+public class UserManager {
+
+	public ArrayList<User> users = new ArrayList<>();
+
+	public boolean addUser(User user) {
+		boolean added = this.users.add(user);
+		return added;
+	}
+
+//	public void addUser(int id, String username, String email) {
+//		this.users.add(new User(id, username, email));
+//	}
+
+	public void removeUser(User user) {
+		this.users.remove(user);
+	}
+
+	public User getUser(int index) {
+		return this.users.get(index);
+	}
+
+	public User findByName(String name) {
+		for (int i = 0; i < this.users.size(); i++) {
+			if (this.getUser(i).username == name) {
+				return this.getUser(i);
+			}
+		}
+		return null;
+	}
+
+	public void print() {
+		for (int i = 0; i < this.users.size(); i++) {
+			this.getUser(i).print();
+		}
+	}
+}
