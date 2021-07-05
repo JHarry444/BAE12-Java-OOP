@@ -24,6 +24,11 @@ public class App {
 			currentUser.print(); // User line 22-29
 		}
 
+		for (User user : users) {
+//			users.remove(user); NEVER CHANGE THE LENGTH MID LOOP
+			user.print();
+		}
+
 		ArrayList<Integer> nums = new ArrayList<>(List.of(3, 6, 9));
 
 		nums.add(27);
@@ -35,6 +40,9 @@ public class App {
 		User user2 = new User(21, "bloop", "b@loop.com");
 		System.out.println("MANAGER:");
 		manager.addUser(user2);
+		manager.addUser(user1);
+		manager.addUser(new User(3, "paul", "paul@chuckle.com"));
+		manager.removeUserByName("bloop");
 
 		manager.print();
 	}

@@ -19,6 +19,23 @@ public class UserManager {
 		this.users.remove(user);
 	}
 
+	public void removeUserByName(String name) {
+//		Bad example
+//		for (User user : this.users) {
+//			if (user.username == name) {
+//				this.users.remove(user);
+//			}
+//		}
+
+		ArrayList<User> toRemove = new ArrayList<>();
+		for (User user : this.users) {
+			if (user.username == name) {
+				toRemove.add(user);
+			}
+		}
+		this.users.removeAll(toRemove);
+	}
+
 	public User getUser(int index) {
 		return this.users.get(index);
 	}
