@@ -27,13 +27,11 @@ public class UserManager {
 //			}
 //		}
 
-		ArrayList<User> toRemove = new ArrayList<>();
-		for (User user : this.users) {
+		for (User user : new ArrayList<>(this.users)) {
 			if (user.username == name) {
-				toRemove.add(user);
+				users.remove(user);
 			}
 		}
-		this.users.removeAll(toRemove);
 	}
 
 	public User getUser(int index) {
